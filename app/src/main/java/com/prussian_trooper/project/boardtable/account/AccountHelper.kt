@@ -10,7 +10,7 @@ import com.prussian_trooper.project.boardtable.R
 
 class AccountHelper(act: MainActivity) {
     private val act = act
-
+//проверка
     fun signUpWithEmail(email: String, password: String) {
         if (email.isNotEmpty() && password.isNotEmpty()) {
             act.myAuth.createUserWithEmailAndPassword(email, password)
