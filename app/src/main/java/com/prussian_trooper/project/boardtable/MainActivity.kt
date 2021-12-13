@@ -10,10 +10,10 @@ import androidx.core.view.GravityCompat
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.prussian_trooper.project.boardtable.databinding.ActivityMainBinding
+
 import com.prussian_trooper.project.boardtable.dialogs.DialogConst
 import com.prussian_trooper.project.boardtable.dialogs.DialogHelper
-import com.prussian_trooper.tabledenunsionskotlin.learn_project.databinding.ActivityMainBinding
-
 
 class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
     private lateinit var tvAccount: TextView
@@ -36,8 +36,14 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
     }
 
     /* убрали плагин kotlin-android-extensions*/
-    private fun init(){
-        val toogle = ActionBarDrawerToggle(this, rootElement.drawerLayout, rootElement.mainContent.toolbar, R.string.open, R.string.close)
+    private fun init() {
+        val toogle = ActionBarDrawerToggle(
+            this,
+            rootElement.drawerLayout,
+            rootElement.mainContent.toolbar,
+            R.string.open,
+            R.string.close
+        )
         rootElement.drawerLayout.addDrawerListener(toogle)
         toogle.syncState()
         rootElement.navView.setNavigationItemSelectedListener(this)
@@ -46,7 +52,7 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
+        when (item.itemId) {
             R.id.id_my_ads -> {
                 /*Проверка работаспособности*/
                 Toast.makeText(this, "Pressed id_my_ads", Toast.LENGTH_LONG).show()
